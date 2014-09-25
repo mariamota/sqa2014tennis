@@ -33,12 +33,14 @@ class Match:
             self.resultados(self)
 
     def resultados(self):
+        r = ""
         if(self.won[1] < self.won[0]):
-            return "{0} defeated {1} | {2}\
-            ".format(self.p1, self.p2, self.imp(self.p1))
+            r = "{0} defeated {1} | ".format(self.p1, self.p2)
+            r += self.imp(self.p1)
         elif(self.won[0] < self.won[1]):
-            return "{0} defeated {1} | {2}\
-            ".format(self.p2, self.p1, self.imp(self.p2))
+            r = "{0} defeated {1} | ".format(self.p2, self.p1)
+            r += self.imp(self.p2)
+        return r
 
     def imp(self, w):
         sal = ""
